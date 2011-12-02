@@ -1,0 +1,45 @@
+<h1>Liste des dernieres factures saisies</h1>
+
+<table>
+  <tr>
+    <th>Date</th>
+    <th>Montant</th>
+    <th>Type filiere</th>
+    <th>Commentaire</th>
+    <th>Tva</th>
+    <th>Neuf</th>
+    <th>Difficulte</th>
+    <th>Departement</th>
+    <th>Type facture</th>
+    <th>Temps execution</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @prixes.each do |prix| %>
+  <tr>
+    <td><%= prix.date %></td>
+    <td><%= prix.montant%></td>
+    <td><%= prix.type_filiere %></td>
+    <td><%= prix.commentaire %></td>
+    <td><%= prix.tva %></td>
+    <td><%= prix.neuf %></td>
+    <td><%= prix.difficulte %></td>
+    <td><%= prix.departement %></td>
+    <td><%= prix.type_facture %></td>
+    <td><%= prix.temps_execution %></td>
+    <td><%= link_to 'Show', prix %></td>
+    <td><%= link_to 'Edit', edit_prix_path(prix) %></td>
+    <td><%= link_to 'Destroy', prix, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+<hr/>
+Il y a <%= @prixes.count %> prix dans la base.<br/>
+compris entre <%= number_to_currency(Prix.minimum(:montant))%> et <%= number_to_currency(Prix.maximum(:montant))%> soit une moyenne : <%= number_to_currency(Prix.average(:montant))%><br/>
+
+<br/>
+
+<hr/>
+<br />

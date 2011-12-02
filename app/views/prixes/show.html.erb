@@ -1,0 +1,55 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Date:</b>
+  <%= @prix.date %>
+</p>
+
+<p>
+  <b>Montant:</b>
+  <%= @prix.montant %>
+</p>
+
+<p>
+  <b>Type filiere:</b>
+  <%= @prix.type_filiere %>
+</p>
+
+<p>
+  <b>Commentaire:</b>
+  <%= @prix.commentaire %>
+</p>
+
+<p>
+  <b>Tva:</b>
+  <%= @prix.tva %>
+</p>
+
+<p>
+  <b>Neuf:</b>
+  <%= @prix.neuf %>
+</p>
+
+<p>
+  <b>Difficulte:</b>
+  <%= @prix.difficulte %>
+</p>
+
+<p>
+  <b>Departement:</b>
+  <%= @prix.departement %>
+</p>
+
+<p>
+  <b>Type facture:</b>
+  <%= @prix.type_facture %>
+</p>
+
+<p>
+  <b>Temps execution:</b>
+  <%= @prix.temps_execution %>
+</p>
+
+
+<%= link_to 'Edit', edit_prix_path(@prix) %> |
+<%= link_to 'Back', prixes_path %>

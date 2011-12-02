@@ -1,0 +1,20 @@
+<%= simple_form_for @prix do |f| %>
+  <p><%= f.input :departement, :label => "Département", :as => :select, :collection => Liste.where(:quoi =>"depart"), :label_method => 'content', :value_method => 'content' %></p>
+  <p><%= f.input :type_filiere, :as => :select, :collection => Liste.where(:quoi =>"filiere"), :label_method => 'content', :value_method => 'content' %></p>
+
+
+  <p><%= f.input :dimension, :collection => 1..20 %> en eq.hab ou pièces principales</p>
+  <p><%= f.input :date, :id => "datepicker", :as => :string, :label => "Date de réalisation" %></p>
+  <p><%= f.input :montant %></p>
+
+  <p><%= f.input :tva, :as => :radio, :collection => ["Pleine","Réduite"] %></p>
+  <p><%= f.input :neuf, :label => "travaux", :as => :radio, :collection => ["Neuf","Réhabilitation"] %></p>
+
+  <p><%= f.input :type_facture, :as => :radio, :collection => ["Facture","Devis"] %></p>
+
+  <p><%= f.input :difficulte, :as => :radio, :collection => ["Facile","Moyen","Difficile","Très difficile"] %></p>
+  <p><%= f.input :commentaire %></p>
+
+    <%= f.submit "J'accepte les conditions et j'enregistre ce prix" %>
+
+<%end%>

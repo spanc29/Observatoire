@@ -1,0 +1,133 @@
+/*
+CSS Document
+Wink Hosting (www.winkhosting.com)
+Designed By Alexis Corredor
+alexis.corredor@gmail.com
+*/
+body {
+  margin-top: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+
+}
+
+/*HEADER*/
+#header{
+  width: 800px;
+  position:relative;
+  height: 162px;
+  background-image:url(header.jpg);
+  background-repeat:no-repeat;
+}
+/*COMPANY NAME IN HEADER*/
+#companyname {
+  position:absolute;
+  color: #FFFFFF;
+  font-size: 36px;
+  font-weight: bold;
+  margin-top:50px;
+  margin-left:40px;
+  left: 0px;
+  top: 0px;
+}
+/*MENU IN HEADER*/
+#menu{
+  position:absolute;
+  bottom: 20px;
+  right: 30px;
+  font-weight: bold;
+}
+#menu a{
+  font-weight: bold;
+  color:#333333;
+  text-decoration:none;
+}
+#menu a:hover{
+  text-decoration:underline;
+}
+
+/*LEFT PANEL (News, Links, etc.)*/
+#leftpanel{
+  float:left;
+  width:200px;
+}
+
+/*CONTENT*/
+#content{
+  width: 800px;
+}
+#contenttext{
+  float:right;
+  width: 580px;
+}
+
+/*FOOTER*/
+.footer{
+  width: 779px;
+  height: 32px;
+  background-image:url(bg_footer.gif);
+  background-repeat:no-repeat;
+  clear:both;
+  font-weight: bold;
+  color:#FFFFFF;
+}
+/*FOOTER LINKS*/
+.footer a{
+  font-weight: bold;
+  color:#FFFFFF;
+  text-decoration:none;
+}
+.footer a:hover{
+  text-decoration:underline;
+}
+
+/*TABLE*/
+.table_top{
+  width: 204px;
+  height: 27px;
+  background-image:url(table_top.jpg);
+  background-repeat:no-repeat;
+}
+.table_content{
+  width: 204px;
+  background-image:url(table_content.jpg);
+  background-repeat:repeat-y;
+}
+.table_text{
+  margin-left:15px;
+  margin-right:15px;
+  text-align:justify;
+}
+.table_bottom{
+  width: 204px; height: 23px;
+  background-image:url(table_bottom.jpg);
+  background-repeat:no-repeat;
+}
+
+/*TEXT STYLES*/
+.news_date {
+  font-weight: bold;
+  color: #0099CC;
+}
+.body_text {
+  font-size: 11px;
+}
+.news_more {
+  color: #FF9900;
+  font-weight: bold;
+}
+.news_text {
+}
+
+.subtitle_gray {
+  font-weight: bold;
+  font-size: 14px;
+  color: #CCCCCC;
+}
+.title_blue {font-weight: bold; font-size: 26px; color: #7DA5E0; }
+
+.title_panel {
+  font-size: 12px;
+  font-weight: bold;
+}

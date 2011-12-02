@@ -1,0 +1,25 @@
+<h1>Listing listes</h1>
+
+<table>
+  <tr>
+    <th>Quoi</th>
+    <th>Content</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @listes.each do |liste| %>
+  <tr>
+    <td><%= liste.quoi %></td>
+    <td><%= liste.content %></td>
+    <td><%= link_to 'Show', liste %></td>
+    <td><%= link_to 'Edit', edit_liste_path(liste) %></td>
+    <td><%= link_to 'Destroy', liste, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Liste', new_liste_path %>

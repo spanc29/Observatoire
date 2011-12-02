@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Quoi:</b>
+  <%= @liste.quoi %>
+</p>
+
+<p>
+  <b>Content:</b>
+  <%= @liste.content %>
+</p>
+
+
+<%= link_to 'Edit', edit_liste_path(@liste) %> |
+<%= link_to 'Back', listes_path %>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Observat</title>
+  <%= stylesheet_link_tag    "application" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div id="page" align="center">
+  <div id="header">
+      <div id="companyname" align="left">OBSERVATOIRE des PRIX<br/> en ANC</div>
+      <div align="right" class="links_menu" id="menu">
+        <%= link_to "Accueil",root_path %> |
+        <%= link_to 'Saisir un prix', new_prix_path %> |
+        <a href="#">contact</a> |
+        <a href="#">avertissement</a>
+      </div>
+    </div>
+    <br />
+<div id="content">
+      <div id="text">
+        <%= yield %>
+      </div>
+
+
+
+
+      <div class="footer">
+        <br />
+        <%= link_to 'Listes', listes_path %>|
+        <a href="#">About Us</a> |
+        <a href="#">un service SPANC29.net</a> |
+        Designed by <a href="http://www.winkhosting.com/">Wink Hosting</a>.
+        <br/>
+      </div>
+</div>
+</body>
+</html>
