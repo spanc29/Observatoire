@@ -1,4 +1,6 @@
-class GraphController < ApplicationController
+class GraphsController < ApplicationController
+
+
   def index
     @prixes = Prix.all
 

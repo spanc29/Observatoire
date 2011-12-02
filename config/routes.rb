@@ -1,6 +1,7 @@
 Observat::Application.routes.draw do
   resources :prixes
   resources :listes
+  resources :graphs
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
