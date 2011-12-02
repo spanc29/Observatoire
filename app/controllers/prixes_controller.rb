@@ -3,6 +3,17 @@ class PrixesController < ApplicationController
   # GET /prixes.json
   def index
     @prixes = Prix.all
+    @mont = Array.new
+
+    @prixes.each do |m|
+      @mont.push([m.dimension,m.montant])
+    end
+
+    @h = LazyHighCharts::HighChart.new('graph') do |f|
+    f.options[:chart][:defaultSeriesType] = "scatter"
+    f.series(:name=>'montant',:color=> 'rgba(119, 152, 191, .5)', :data=> @mont)
+    end
+
 
     respond_to do |format|
       format.html # index.html.erb
@@ -14,7 +25,6 @@ class PrixesController < ApplicationController
   # GET /prixes/1.json
   def show
     @prix = Prix.find(params[:id])
-
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @prix }
