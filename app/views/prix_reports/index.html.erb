@@ -1,0 +1,35 @@
+<div id="leftpanel">
+        <div class="table_top">
+          <div align="center"><span class="title_panel">Par département</span> </div>
+        </div>
+        <div class="table_content">
+          <div class="table_text">
+<%= form_for @prix_report, :html => {:method => :get} do |f| -%>
+  <% @prix_report.filters.each do |filter| -%>
+      <div class="filter">
+        <%= f.datagrid_label filter %><br/>
+        <%= f.datagrid_filter filter %>
+      </div>
+      <div class="clear"></div>
+  <% end -%>
+
+  <div class="filter">
+      <%= f.submit 'Créer filtre' %>
+  </div>
+  <% end -%>
+          </div>
+        </div>
+        <div class="table_bottom"></div>
+</div>
+
+
+<hr/>
+
+<%= high_chart("my_id", @h) %>
+
+
+
+<div class='total'>Total: <%= @prix_report.assets.count %></div>
+
+<%= datagrid_table(@prix_report, @assets) %>
+<%= paginate @assets %>

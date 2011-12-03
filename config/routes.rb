@@ -2,6 +2,15 @@ Observat::Application.routes.draw do
   resources :prixes
   resources :listes
   resources :graphs
+  resources :prix_reports, :only => [:index]
+
+
+
+
+
+  get "fixes/aide"
+  get "fixes/about"
+  get "fixes/don"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -1,46 +1,37 @@
-<h1>Liste des dernieres factures saisies</h1>
+<h1 class="title_blue">Bienvenue</h1>
+<p align="justify"> Ce site a pour but de </p>
 
+<hr/>
+<p>
+Il y a actuellement <%= @prixes.count %> prix dans la base.<br/>
+compris entre <b><%= number_to_currency(Prix.minimum(:montant))%></b> et <b><%= number_to_currency(Prix.maximum(:montant))%></b> soit une moyenne de : <b><%= number_to_currency(Prix.average(:montant))%></b><br/>
+</p>
+ <p><strong><%= link_to "Consulter les statistiques", graphs_path %></strong></p>
+<hr/>
 
-<table>
+<h3>Liste des 10 dernières factures saisies</h3>
+<table id="Tindex">
   <tr>
-    <th>Date</th>
-    <th>Montant</th>
+    <th>Département</th>
+    <th>Date de réalisation</th>
     <th>Type filiere</th>
-    <th>Commentaire</th>
-    <th>Tva</th>
-    <th>Neuf</th>
-    <th>Difficulte</th>
-    <th>Departement</th>
-    <th>Type facture</th>
-    <th>Temps execution</th>
-    <th></th>
+    <th>Montant TTC</th>
     <th></th>
     <th></th>
   </tr>
-
 <% @prixes.each do |prix| %>
   <tr>
-    <td><%= prix.date %></td>
-    <td><%= prix.montant%></td>
-    <td><%= prix.type_filiere %></td>
-    <td><%= prix.commentaire %></td>
-    <td><%= prix.tva %></td>
-    <td><%= prix.neuf %></td>
-    <td><%= prix.difficulte %></td>
     <td><%= prix.departement %></td>
-    <td><%= prix.type_facture %></td>
-    <td><%= prix.temps_execution %></td>
-    <td><%= link_to 'Show', prix %></td>
-    <td><%= link_to 'Edit', edit_prix_path(prix) %></td>
-    <td><%= link_to 'Destroy', prix, confirm: 'Are you sure?', method: :delete %></td>
+    <td><%= l(prix.date.to_date) %></td>
+    <td><%= prix.type_filiere %></td>
+    <td class="big right"><%=number_to_currency(prix.montant)%></td>
+    <td class="quiet"><%= l(prix.updated_at.to_date) %></td>
+
+
+    <td><%= link_to image_tag("details.gif", :title => '+ de détails'), prix %>
+    <%= link_to 'Edit', edit_prix_path(prix) %>
+    <%= link_to 'Destroy', prix, confirm: 'certain ?', method: :delete %></td>
   </tr>
 <% end %>
 </table>
 <hr/>
-Il y a <%= @prixes.count %> prix dans la base.<br/>
-compris entre <%= number_to_currency(Prix.minimum(:montant))%> et <%= number_to_currency(Prix.maximum(:montant))%> soit une moyenne : <%= number_to_currency(Prix.average(:montant))%><br/>
-
-<br/>
-
-<hr/>
-<br />
