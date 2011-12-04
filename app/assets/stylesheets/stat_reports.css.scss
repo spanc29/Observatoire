@@ -1,3 +1,44 @@
 // Place all the styles related to the stat_reports controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+table.datagrid {
+    width: 100%;
+    th  {
+      background-color: #7DA5E0;
+      text-transform:uppercase;
+    }
+    tr.odd {
+    background-color:#E6E6FA;
+    }
+
+}
+div.order {
+    font-size: 0.875em;
+    a {
+    text-decoration: none;
+    color: #FFF;
+    &:hover {text-decoration: underline overline;}
+    }
+}
+
+#Tstat {
+  width: 100%;
+  td.label, .item{
+      height: 22px;
+      vertical-align:bottom;
+      padding-right: 1%;
+      font-size: 1.2em;
+      padding-top:1px;
+      letter-spacing: 1px;
+      text-align: right;
+  }
+
+  td.item {
+      border-bottom: 1px dotted #aaa;
+      text-align: center;}
+    .big{
+      font-size: 1.8em;
+      text-align: right;
+      }
+}

@@ -89,6 +89,29 @@ body {
   background-image:url(table_top.jpg);
   background-repeat:no-repeat;
 }
+
+.table_top2{
+padding-right: 30px;
+background-color:#ffffff;
+border-width:2px solid #7DA5E0;
+-moz-border-radius:30px;
+-webkit-border-radius:30px;
+border-radius:30px;
+-moz-box-shadow:5px 5px 5px #BFBFBF;
+-webkit-box-shadow:5px 5px 5px #BFBFBF;
+box-shadow:5px 5px 5px #444557;
+background-image: -moz-linear-gradient(top, #DAE9FC, #7DA5E0);
+background-image: -webkit-gradient(linear, center top, center bottom, from(#DAE9FC), to(#7DA5E0));
+background-image: -o-linear-gradient(top, #DAE9FC, #7DA5E0);
+background-image: linear-gradient(top, #DAE9FC, #7DA5E0);
+-moz-background-clip: padding-box;
+-webkit-background-clip: padding-box;
+background-clip: padding-box;
+/*Use "background-clip: padding-box" when using rounded corners to avoid the gradient bleeding through the corners*/
+/*--IE9 DOES NOT SUPPORT GRADIENT BACKGROUNDS--*/
+}
+
+
 .table_content{
   width: 204px;
   background-image:url(table_content.jpg);

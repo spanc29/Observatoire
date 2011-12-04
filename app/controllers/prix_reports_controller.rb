@@ -5,14 +5,26 @@ class PrixReportsController < ApplicationController
     @assets = @prix_report.assets.page(params[:page])
 
   # make an array for visibility by javascript
-    @mont = Array.new
+    @reha = Array.new
+    @neuf = Array.new
     @assets.each do |m|
-      @mont.push([m.dimension,m.montant])
+      if m.neuf == "rehabilitation"
+      @reha.push([m.dimension,m.montant])
+      else
+      @neuf.push([m.dimension,m.montant])
+      end
     end
 
     @h = LazyHighCharts::HighChart.new('graph') do |f|
     f.options[:chart][:defaultSeriesType] = "scatter"
-    f.series(:name=>'montant',:color=> 'rgba(119, 152, 191, .5)', :data=> @mont)
+    f.title ({:text => "Montant en fonction de la dimension"})
+    f.xAxis(:title=>{:text=>"en eq.hab ou PP"})
+    f.yAxis(:title=>{:text=>"en euros TTC"})
+    f.options[:legend][:layout] = "horizontal"
+
+
+    f.series(:name=>'Rehabilitation',:color=> 'rgba(119, 152, 191, .6)', :data=> @reha)
+    f.series(:name=>'Neuf',:color=> 'rgba(119, 152, 0, .6)', :data=> @neuf)
     end
 
 

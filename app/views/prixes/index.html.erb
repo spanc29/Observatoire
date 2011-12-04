@@ -1,3 +1,38 @@
+<div id="content">
+      <div id="leftpanel">
+        <div class="table_top">
+          <div align="center"><span class="title_panel">PRIX</span> </div>
+        </div>
+        <div class="table_content">
+          <div class="table_text">
+              <span class="news_more"><%= link_to "Saisir un prix", new_prix_path() %></span><br />
+              <span class="news_more"><%= link_to "Consulter les prix", prix_reports_path %></span><br />
+          </div>
+        </div>
+        <div class="table_bottom"></div>
+        <br />
+
+        <div class="table_top">
+          <span class="title_panel">SITE</span>
+        </div>
+        <div class="table_content">
+          <div class="table_text">
+            <span class="news_more"><a href="http://www.winkhosting.com">Wink Hosting </a></span><br />
+            <span class="news_more"><a href="http://www.google.com">Google </a></span><br />
+            <span class="news_more"><a href="http://www.oswd.org">OSWD</a></span><br />
+            <span class="news_more"><a href="http://www.yahoo.com">Yahoo</a></span><br />
+            <span class="news_more"><a href="http://www.spanc29.net">SPANC29.net</a></span><br />
+          </div>
+        </div>
+        <div class="table_bottom">
+          <img src="images/table_bottom.jpg" width="204" height="23" border="0" alt="" />
+        </div>
+        <br />
+      </div>
+
+
+
+<div id="contenttext">
 <h1 class="title_blue">Bienvenue</h1>
 <p align="justify"> Ce site a pour but de </p>
 
@@ -6,7 +41,7 @@
 Il y a actuellement <%= @prixes.count %> prix dans la base.<br/>
 compris entre <b><%= number_to_currency(Prix.minimum(:montant))%></b> et <b><%= number_to_currency(Prix.maximum(:montant))%></b> soit une moyenne de : <b><%= number_to_currency(Prix.average(:montant))%></b><br/>
 </p>
- <p><strong><%= link_to "Consulter les statistiques", graphs_path %></strong></p>
+ <p><strong><%= link_to "Consulter les statistiques", prix_reports_path %></strong></p>
 <hr/>
 
 <h3>Liste des 10 dernières factures saisies</h3>
@@ -35,3 +70,4 @@ compris entre <b><%= number_to_currency(Prix.minimum(:montant))%></b> et <b><%= 
 <% end %>
 </table>
 <hr/>
+</div>

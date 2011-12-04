@@ -1,7 +1,6 @@
 Observat::Application.routes.draw do
   resources :prixes
   resources :listes
-  resources :graphs
   resources :prix_reports, :only => [:index]
 
 

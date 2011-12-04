@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111201211728) do
+ActiveRecord::Schema.define(:version => 20111204143047) do
 
   create_table "listes", :force => true do |t|
     t.string   "quoi"
@@ -27,10 +27,9 @@ ActiveRecord::Schema.define(:version => 20111201211728) do
     t.text     "commentaire"
     t.string   "tva"
     t.string   "neuf"
-    t.integer  "difficulte"
+    t.string   "difficulte"
     t.string   "departement"
     t.string   "type_facture"
-    t.integer  "temps_execution"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "dimension"

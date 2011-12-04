@@ -1,35 +1,44 @@
-<div id="leftpanel">
-        <div class="table_top">
-          <div align="center"><span class="title_panel">Par département</span> </div>
-        </div>
-        <div class="table_content">
-          <div class="table_text">
+<div id="panel">
+        <div class="table_top2">
+          <div align="center"><span class="title_panel">filtrer</span> </div>
+        <br/>
 <%= form_for @prix_report, :html => {:method => :get} do |f| -%>
   <% @prix_report.filters.each do |filter| -%>
-      <div class="filter">
-        <%= f.datagrid_label filter %><br/>
-        <%= f.datagrid_filter filter %>
-      </div>
-      <div class="clear"></div>
-  <% end -%>
+  <%= f.datagrid_label filter %> <%= f.datagrid_filter filter %>
+<%end%>
 
-  <div class="filter">
+  <div class="right">
       <%= f.submit 'Créer filtre' %>
   </div>
-  <% end -%>
-          </div>
-        </div>
-        <div class="table_bottom"></div>
+  <%end%>
 </div>
 
-
-<hr/>
-
+<div id="graph">
 <%= high_chart("my_id", @h) %>
 
+  <div class='total'>
+    <h3>STATISTIQUES GENERALES</h3>
+    <span class="subtitle_gray"> Suivant filtre</span><br/>
+  <table id="Tstat">
+    <tbody>
+      <tr>
+        <td class="label">nombre d'entrées trouvées :</td>
+        <td class="big"><%= @prix_report.assets.count %></td>
+        <td class="label">Moyenne des montants :</td>
+        <td class="big"><%= number_to_currency(@prix_report.assets.average('montant')) %></td>
+      </tr>
+      <tr>
+        <td class="label">nombre de réhabilitations / neufs :</td>
+        <td class="big"><%= @prix_report.assets.where(:neuf => "Réhabilitation").count %> / <%= @prix_report.assets.where(:neuf => "Neuf").count %></td>
+        <td class="label">Amplitude prix :  </td>
+        <td class="big"> de <%= number_to_currency(@prix_report.assets.minimum('montant'))%> à <%= number_to_currency(@prix_report.assets.maximum('montant'))%></td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+<hr/>
+<h3>DONNEES </h3>
 
-
-<div class='total'>Total: <%= @prix_report.assets.count %></div>
-
-<%= datagrid_table(@prix_report, @assets) %>
+<%= datagrid_table(@prix_report, @assets, :cycle => ["odd", "even"]) %>
 <%= paginate @assets %>
+</div>
