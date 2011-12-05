@@ -62,7 +62,6 @@ compris entre <b><%= number_to_currency(Prix.minimum(:montant))%></b> et <b><%= 
     <td class="big right"><%=number_to_currency(prix.montant)%></td>
     <td class="quiet"><%= l(prix.updated_at.to_date) %></td>
 
-
     <td><%= link_to image_tag("details.gif", :title => '+ de détails'), prix %>
     <%= link_to 'Edit', edit_prix_path(prix) %>
     <%= link_to 'Destroy', prix, confirm: 'certain ?', method: :delete %></td>
