@@ -11,7 +11,7 @@ class PrixReport
   #
   filter(:departement, :enum, :select => Liste.depart.map { |d| [d.content]})
   filter(:type_filiere, :enum, :select => Liste.filiere.map { |f| [f.content]})
-  filter(:difficulte, :enum, :select => Prix.difficulte.map { |s| [s.difficulte]})
+  filter(:difficulte, :enum, :select => Prix.diffic.map { |s| [s.difficulte]})
   integer_range_filters(:dimension)
   #
   # Columns
