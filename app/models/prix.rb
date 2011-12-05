@@ -1,4 +1,4 @@
 class Prix < ActiveRecord::Base
 
-  scope :difficulte, where(:difficulte).any?
+  scope :difficulte, where(:difficulte).exists?
 end
