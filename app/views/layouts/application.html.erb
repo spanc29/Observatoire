@@ -12,9 +12,8 @@
       <div id="companyname" align="left">OBSERVATOIRE des PRIX<br/> en ANC</div>
       <div align="right" class="links_menu" id="menu">
         <%= link_to "Accueil",root_path %> |
-        <%= link_to 'Saisir un prix', new_prix_path %> |
         <a href="#">contact</a> |
-        <a href="#">avertissement</a>
+        <%= link_to 'Avertissement', "/fixes/about" %>
       </div>
     </div>
     <br />
@@ -27,11 +26,9 @@
 
 
       <div class="footer">
-        <br />
-        <%= link_to 'Listes', listes_path %>|
-        <%= link_to 'About', "/fixes/about" %>|
-        <a href="#">un service SPANC29.net</a> |
-        Designed by <a href="http://www.winkhosting.com/">Wink Hosting</a>.
+        <%= link_to 'Avertissement/mentions légales', "/fixes/about" %> |
+        <%= link_to 'un service gratuit SPANC29.NET', "http://www.spanc29.net" %> |
+        Designed by <a href="http://www.winkhosting.com/">Wink Hosting</a>
         <br/>
       </div>
 </div>

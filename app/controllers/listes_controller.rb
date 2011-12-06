@@ -1,4 +1,6 @@
 class ListesController < ApplicationController
+  before_filter :login_required
+
   # GET /listes
   # GET /listes.json
   def index

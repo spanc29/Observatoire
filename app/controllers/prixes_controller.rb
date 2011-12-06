@@ -1,4 +1,7 @@
+# encoding: UTF-8
+
 class PrixesController < ApplicationController
+  before_filter :login_required, :except => [:index, :show, :new, :create]
   # GET /prixes
   # GET /prixes.json
   def index
@@ -43,7 +46,7 @@ class PrixesController < ApplicationController
 
     respond_to do |format|
       if @prix.save
-        format.html { redirect_to @prix, notice: 'Prix was successfully created.' }
+        format.html { redirect_to @prix, notice: 'Entrée créé avec succès, merci de votre aide.' }
         format.json { render json: @prix, status: :created, location: @prix }
       else
         format.html { render action: "new" }
@@ -59,7 +62,7 @@ class PrixesController < ApplicationController
 
     respond_to do |format|
       if @prix.update_attributes(params[:prix])
-        format.html { redirect_to @prix, notice: 'Prix was successfully updated.' }
+        format.html { redirect_to @prix, notice: 'Entrée mise a jour.' }
         format.json { head :ok }
       else
         format.html { render action: "edit" }

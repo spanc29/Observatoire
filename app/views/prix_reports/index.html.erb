@@ -14,7 +14,9 @@
 </div>
 
 <div id="graph">
-<%= high_chart("my_id", @h) %>
+<%= high_chart("my_id", @h) do |c|%>
+<% "options.tooltip.formatter = function() {return ''+ this.series.name +' : '+ this.y +' € ';}" %>
+<%end%>
 
   <div class='total'>
     <h3>STATISTIQUES GENERALES</h3>

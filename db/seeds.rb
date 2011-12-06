@@ -10,7 +10,7 @@
 
 #departement
   Liste.create!([
-{quoi: "depart", content: "01-Ain"},
+{quoi: "depart", content: "01 - Ain"},
 {quoi: "depart", content: "02 - Aisne"},
 {quoi: "depart", content: "03 - Allier"},
 {quoi: "depart", content: "04 - Alpes-de-Haute-Provence"},

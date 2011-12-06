@@ -2,22 +2,33 @@ body {
   background-color: #fff;
   color: #333;
   font-family: verdana, arial, helvetica, sans-serif;
-  font-size: 12px;
-  }
-
-p, ol, ul, td {
-  font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
-  line-height: 18px; }
+  line-height: 18px;
+
+  }
+abbr {
+    border-bottom: none;
+    cursor: help;
+    }
+
+p, ol, ul {
+  text-align:justify;
+  li {
+  border-bottom : 0.1em dotted;}}
+
+dt {
+  font-style:uppercase;
+  font-weight: bold;
+  letter-spacing: 1px;}
+
+
+.center {
+  text-align: center;}
 
 pre {
   background-color: #eee;
   padding: 10px;
   font-size: 11px; }
-
-div {
-  &.field, &.actions {
-    margin-bottom: 10px; } }
 
 #notice {
   color: green; }

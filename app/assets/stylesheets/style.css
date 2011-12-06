@@ -11,10 +11,11 @@ body {
   margin-bottom: 0px;
 
 }
+img {border: none;}
 
 /*HEADER*/
 #header{
-  width: 800px;
+  width: 960px;
   position:relative;
   height: 162px;
   background-image:url(header.jpg);
@@ -23,6 +24,7 @@ body {
 /*COMPANY NAME IN HEADER*/
 #companyname {
   position:absolute;
+  line-height: 36px;
   color: #FFFFFF;
   font-size: 36px;
   font-weight: bold;
@@ -55,26 +57,27 @@ body {
 
 /*CONTENT*/
 #content{
-  width: 800px;
+  width: 960px;
 }
 #contenttext{
   float:right;
-  width: 580px;
+  width: 740px;
 }
 
 /*FOOTER*/
 .footer{
-  width: 779px;
+  width: 960px;
   height: 32px;
+  padding-top: 8px;
   background-image:url(bg_footer.gif);
   background-repeat:no-repeat;
   clear:both;
-  font-weight: bold;
+  font-weight: small;
   color:#FFFFFF;
 }
 /*FOOTER LINKS*/
 .footer a{
-  font-weight: bold;
+  font-weight: small;
   color:#FFFFFF;
   text-decoration:none;
 }
@@ -92,6 +95,7 @@ body {
 
 .table_top2{
 padding-right: 30px;
+margin-bottom: 10px;
 background-color:#ffffff;
 border-width:2px solid #7DA5E0;
 -moz-border-radius:30px;

@@ -1,3 +1,5 @@
+# encoding: UTF-8
+
 class PrixReportsController < ApplicationController
 
   def index
@@ -8,7 +10,7 @@ class PrixReportsController < ApplicationController
     @reha = Array.new
     @neuf = Array.new
     @assets.each do |m|
-      if m.neuf == "rehabilitation"
+      if m.neuf == "Réhabilitation"
       @reha.push([m.dimension,m.montant])
       else
       @neuf.push([m.dimension,m.montant])
@@ -17,14 +19,13 @@ class PrixReportsController < ApplicationController
 
     @h = LazyHighCharts::HighChart.new('graph') do |f|
     f.options[:chart][:defaultSeriesType] = "scatter"
+    f.options[:chart][:zoomType] = "xy"
     f.title ({:text => "Montant en fonction de la dimension"})
     f.xAxis(:title=>{:text=>"en eq.hab ou PP"})
     f.yAxis(:title=>{:text=>"en euros TTC"})
     f.options[:legend][:layout] = "horizontal"
-
-
     f.series(:name=>'Rehabilitation',:color=> 'rgba(119, 152, 191, .6)', :data=> @reha)
-    f.series(:name=>'Neuf',:color=> 'rgba(119, 152, 0, .6)', :data=> @neuf)
+    f.series(:name=>'Neuf',:color=> 'rgba(165, 42, 42, .6)', :data=> @neuf)
     end
 
 

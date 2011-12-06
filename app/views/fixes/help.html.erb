@@ -1,0 +1,45 @@
+
+<h1 class="title_blue" >Mode d'emploi</h1>
+
+<h2>Saisir un prix</h2>
+
+<p class="field_with_errors">ATTENTION, UNE FOIS SAISIE, VOUS EN POUVEZ PLUS MODIFIER LES DONNEES</p>
+
+<p>Pour saisir un nouveau prix vous devez suivre les étapes suivantes : </p>
+
+<div class="center"> <%= image_tag "modeemploi.png" %></div>
+
+<ol class="aide">
+  <li>choisir le département dans la liste</li>
+  <li>choisir le type de filière, si votre filière n'apparait pas, prenez la filière qui se rapproche le plus de la vôtre</li>
+  <li>sélectionner une dimension. Le nombre ici n'est donné que par un chiffre, il convient donc de remplir suivant la capacité d'accueil ou les equivalent-habitants de votre installation. le tableau ci-dessous vous indique quelques correspondances :<br/>
+    <div class="center"><%= image_tag "tableau.jpg" %></div>
+  </li>
+  <li>La date indiquée doit être la date de réalisation du chantier, ou à défaut la date de facture.</li>
+  <li>le montant est en euros TTC, tout compris, tel que indiqué en bas de facture, mais ne doit prendre en compte que l'assainissement.Par contre, les travaux de réfection après chantier font partie des coûts des travaux. Ne pas indiquer si la pose d'une clôture ou de pavé pour décorer le patio ont été fait en même temps.</li>
+  <li>les détails : la TVA et le type de facture ne sont pas nécessaires, ce sont des indications complémentaires.<br/>
+  Le choix entre NEUF ou REHABILITATION est toutefois obligatoire afin de classer les prix.
+  <dl>
+    <dt>Le NEUF</dt>
+        <dd>correspond à la mis en place d'un assainissement où il n'en existait pas (cas généralement des permis de construire).</dd>
+    <dt>La REHABILITATION</dt>
+        <dd>est la rénovation ou remise à niveau d'une installation existante.</dd>
+  </dl>
+</li>
+<li>La difficulté de chantier est classé en 4 catégories qui définissent la complexité de réalisation du chantier :<br/>
+  <dl>
+  <dt>facile</dt><dd>chantier ayant un accès aisé, de la place pour travailler, sans pente, sans difficulté de terrassement (pas de nappe, pas de roche...)</dd>
+  <dt>moyen</dt><dd>le chantier présente des difficultés d'accès par des engins, rotation des machines délicates, une pente moyenne ou des difficultés de pose modérée (nappe présente peu haute, quelques roches...)</dd>
+  <dt>difficile</dt><dd>conditions de pose délicates liées à un manque d'accès par engins, rotations de machine impossible, forte pente, présence d'arbres, hauteur de nappe importante...</dd>
+  <dt>très difficile</dt><dd>conditions de pose extrêmes : zone de montagne, marécageuses, submersibles...</dd>
+  </dl>
+</li>
+<li>laisser un commentaire utile pour la compréhension du prix, notamment s'il est particulièrement haut ou bas par rapport à la moyenne.</li>
+
+<li>lisez les conditions générales du site et validez après avoir vérifié qu'il n'y a pas d'erreurs.</li>
+</ol>
+
+CONSULTER LES PRIX
+
+Un filtre permet de choisir le département ET les différentes données, exemple : vous pouvez choisir de ne voir que les filtre à sable du département. Le tableau et le graphique se mettent alors à jour.
+</div>
