@@ -4,12 +4,9 @@
         <br/>
 <%= form_for @prix_report, :html => {:method => :get} do |f| -%>
   <% @prix_report.filters.each do |filter| -%>
-  <%= f.datagrid_label filter %> <%= f.datagrid_filter filter %>
-<%end%>
-
-  <div class="right">
-      <%= f.submit 'Créer filtre' %>
-  </div>
+        <%= f.datagrid_label filter %> <%= f.datagrid_filter filter %>
+  <%end%>
+  <%= f.submit 'Créer filtre' %>
   <%end%>
 </div>
 
