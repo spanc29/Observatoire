@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111205231914) do
+ActiveRecord::Schema.define(:version => 20111207192723) do
 
   create_table "listes", :force => true do |t|
     t.string   "quoi"
@@ -25,15 +25,13 @@ ActiveRecord::Schema.define(:version => 20111205231914) do
     t.float    "montant"
     t.string   "type_filiere"
     t.text     "commentaire"
-    t.string   "tva"
     t.string   "neuf"
     t.string   "difficulte"
     t.string   "departement"
-    t.string   "type_facture"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "dimension"
-    t.integer  "liste_id"
+    t.string   "dispersion"
   end
 
   create_table "users", :force => true do |t|

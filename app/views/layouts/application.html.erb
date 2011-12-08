@@ -9,11 +9,10 @@
 <body>
 <div id="page" align="center">
   <div id="header">
-      <div id="companyname" align="left">OBSERVATOIRE des PRIX<br/> en ANC</div>
+      <div id="companyname" align="left">OBSERVATOIRE des PRIX<br/>en ANC</div>
       <div align="right" class="links_menu" id="menu">
         <%= link_to "Accueil",root_path %> |
-        <a href="#">contact</a> |
-        <%= link_to 'Avertissement', "/fixes/about" %>
+        <%= mail_to("spanc29@spanc29.net", "Signaler une erreur", :subject => "Une erreur dans PRIX", :body => "soyez precis dans votre description, merci") %>
       </div>
     </div>
     <br />
@@ -22,12 +21,9 @@
         <%= yield %>
       </div>
 
-
-
-
       <div class="footer">
         <%= link_to 'Avertissement/mentions légales', "/fixes/about" %> |
-        <%= link_to 'un service gratuit SPANC29.NET', "http://www.spanc29.net" %> |
+        <%= link_to 'encore un service gratuit SPANC29.NET', "http://www.spanc29.net" %> |
         Designed by <a href="http://www.winkhosting.com/">Wink Hosting</a>
         <br/>
       </div>

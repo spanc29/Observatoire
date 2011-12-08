@@ -33,8 +33,8 @@
     </tr>
 
     <tr>
-      <td class="label">Autres</td>
-      <td class="item">Sur <%= @prix.type_facture %> / chantier : <%= @prix.neuf %> / TVA : <%= @prix.tva %></td>
+      <td class="label">chantier</td>
+      <td class="item"><%= @prix.neuf %></td>
     </tr>
 
     <tr>
@@ -45,5 +45,7 @@
 </table>
 <div class="quiet">saisie le <%= @prix.created_at %></div>
 
-
-<%= link_to 'Edit', edit_prix_path(@prix) %> | <%= link_to 'RETOUR', prixes_path, :class => "retour" %>
+<% if current_user %>
+<%= link_to 'Edit', edit_prix_path(@prix) %> |
+<%end%>
+<%= link_to 'RETOUR', prixes_path, :class => "retour" %>

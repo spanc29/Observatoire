@@ -21,11 +21,11 @@ class PrixReportsController < ApplicationController
     f.options[:chart][:defaultSeriesType] = "scatter"
     f.options[:chart][:zoomType] = "xy"
     f.title ({:text => "Montant en fonction de la dimension"})
-    f.xAxis(:title=>{:text=>"en eq.hab ou PP"})
-    f.yAxis(:title=>{:text=>"en euros TTC"})
+    f.xAxis(:title=>{:text=>"en eq.hab ou PP"}, :min => "3", :allowDecimals => "false")
+    f.yAxis(:title=>{:text=>"en euros TTC"}, :alternateGridColor => "#E8F1FC")
     f.options[:legend][:layout] = "horizontal"
-    f.series(:name=>'Rehabilitation',:color=> 'rgba(119, 152, 191, .6)', :data=> @reha)
-    f.series(:name=>'Neuf',:color=> 'rgba(165, 42, 42, .6)', :data=> @neuf)
+    f.series(:name=>'Rehabilitation',:color=> 'rgba(119, 152, 191, .7)', :data=> @reha)
+    f.series(:name=>'Neuf',:color=> 'rgba(165, 42, 42, .7)', :data=> @neuf)
     end
 
 

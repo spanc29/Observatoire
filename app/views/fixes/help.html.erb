@@ -16,9 +16,8 @@
     <div class="center"><%= image_tag "tableau.jpg" %></div>
   </li>
   <li>La date indiquée doit être la date de réalisation du chantier, ou à défaut la date de facture.</li>
-  <li>le montant est en euros TTC, tout compris, tel que indiqué en bas de facture, mais ne doit prendre en compte que l'assainissement.Par contre, les travaux de réfection après chantier font partie des coûts des travaux. Ne pas indiquer si la pose d'une clôture ou de pavé pour décorer le patio ont été fait en même temps.</li>
-  <li>les détails : la TVA et le type de facture ne sont pas nécessaires, ce sont des indications complémentaires.<br/>
-  Le choix entre NEUF ou REHABILITATION est toutefois obligatoire afin de classer les prix.
+  <li>le montant est en <b>euros TTC</b>, tout compris, tel que indiqué en bas de facture, mais ne doit prendre en compte que l'assainissement. Par contre, les travaux de réfection après chantier font partie des coûts des travaux. Par exemple, Ne pas indiquer la pose d'une clôture ou de pavés pour décorer le patio, ou le terrassement de la piscine s'ils ont été fait en même temps.</li>
+  <li>Le choix entre NEUF ou REHABILITATION est obligatoire afin de classer les prix.
   <dl>
     <dt>Le NEUF</dt>
         <dd>correspond à la mis en place d'un assainissement où il n'en existait pas (cas généralement des permis de construire).</dd>
@@ -36,10 +35,31 @@
 </li>
 <li>laisser un commentaire utile pour la compréhension du prix, notamment s'il est particulièrement haut ou bas par rapport à la moyenne.</li>
 
-<li>lisez les conditions générales du site et validez après avoir vérifié qu'il n'y a pas d'erreurs.</li>
+<li>lisez les conditions générales du site et validez après avoir vérifié qu'il n'y a pas d'erreurs.
+<p><b>ATTENTION, UNE FOIS SAISIE, si vous constatez une erreur, il faudra envoyer un mail à l'administrateur pour corriger la faute.</b></p></li>
 </ol>
 
-CONSULTER LES PRIX
+<h2>CONSULTER LES PRIX</h2>
 
-Un filtre permet de choisir le département ET les différentes données, exemple : vous pouvez choisir de ne voir que les filtre à sable du département. Le tableau et le graphique se mettent alors à jour.
+<h3>FILTRE</h3>
+<p>Un filtre permet de choisir le département ET les différentes données</p>
+<p>exemple : vous pouvez choisir de ne voir que les filtres à sable d'un département. Le tableau et le graphique se mettent alors à jour.</p>
+
+<h3>GRAPHIQUE</h3>
+
+<div class="center"> <%= image_tag "graph.png" %></div>
+<p>Quelques astuces :</p>
+<div class="tleft">
+
+<dl>
+<dt>EXPORT : </dt>
+<dd>Vous pouvez exporter l'image du graphique : PNG,JPG,PDF ou SVG. Il est aussi directement imprimable.</dd>
+<dt>SERIES :</dt>
+<dd>En cliquant sur les séries dans la légende, vous les activez ou désactivez dans le graphique</dd>
+<dt>ZOOM :</dt>
+<dd>En cliquant-glissant la souris vous créez un cadre de zoom sur les valeurs. Il suffit de cliquer sur "retour zoom" (à droite) pour revenir au graphique initial.</dd>
+</dl>
+</div>
+<h3>TABLEAU</h3>
+<p>Le tableau est aussi triable en cliquant sur ASC (tri ascendant) ou DESC (tri descendant). Cela ne modifie pas le graphique.</p>
 </div>
