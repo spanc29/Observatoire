@@ -31,7 +31,13 @@
 .quiet{font-size:0.8em;color: #BFBFBF;}
 .right{text-align: right;}
 
-
+.news_more {
+  a {
+  color: #3178E0;
+  font-weight: bold;
+  text-decoration: none;}
+  &:hover{text-decoration: underline;}
+}
 
 #Tshow {
   width: 100%;
