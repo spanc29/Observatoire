@@ -4,11 +4,13 @@
         <br/>
 <%= form_for @prix_report, :html => {:method => :get} do |f| -%>
   <% @prix_report.filters.each do |filter| -%>
-        <%= f.datagrid_label filter %> <%= f.datagrid_filter filter %>
+        <%= f.datagrid_label filter %><%= f.datagrid_filter filter %><br/>
   <%end%>
   <%= f.submit 'Créer filtre' %>
   <%end%>
 </div>
+
+<% if @prix_report.assets.any? %>
 
 <div id="graph">
 <%= high_chart("my_id", @h) do |c|%>
@@ -23,14 +25,26 @@
       <tr>
         <td class="label">nombre d'entrées trouvées :</td>
         <td class="big"><%= @prix_report.assets.count %></td>
-        <td class="label">Moyenne des montants :</td>
-        <td class="big"><%= number_to_currency(@prix_report.assets.average('montant')) %></td>
+        <td class="label">Amplitude prix :</td>
+        <td class="right"> de <span class="big"> <%= number_to_currency(@prix_report.assets.minimum('montant'))%></span> à <span class="big"> <%= number_to_currency(@prix_report.assets.maximum('montant'))%></span></td>
       </tr>
       <tr>
         <td class="label">nombre de réhabilitations / neufs :</td>
         <td class="big"><%= @prix_report.assets.where(:neuf => "Réhabilitation").count %> / <%= @prix_report.assets.where(:neuf => "Neuf").count %></td>
-        <td class="label">Amplitude prix :  </td>
-        <td class="big"> de <%= number_to_currency(@prix_report.assets.minimum('montant'))%> à <%= number_to_currency(@prix_report.assets.maximum('montant'))%></td>
+        <td class="label">Moyenne des prix :</td>
+        <td class="big"><%= number_to_currency(@prix_report.assets.average('montant')) %></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td class="label">Amplitude dimensions :</td>
+        <td class="right"> de <span class="big"> <%= @prix_report.assets.minimum('dimension')%></span> à <span class="big"> <%= @prix_report.assets.maximum('dimension')%></span></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td class="label">Soit une moyenne de :</td>
+        <td class="right"> <span class="big"> <%=  number_with_precision(@prix_report.assets.average('montant') / @prix_report.assets.average('dimension'), precision: 2)%></span> € / unité dim.</td>
       </tr>
     </tbody>
   </table>
@@ -41,3 +55,6 @@
 <%= datagrid_table(@prix_report, @assets, :cycle => ["odd", "even"]) %>
 <%= paginate @assets %>
 </div>
+<% else %>
+<h1>Désolé, aucun résultat</h1>
+<%end%>

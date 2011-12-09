@@ -5,7 +5,7 @@ class PrixesController < ApplicationController
   # GET /prixes
   # GET /prixes.json
   def index
-    @prixes = Prix.order("updated_at DESC").limit(10)
+    @prixes = Prix.order("updated_at DESC")
 
     respond_to do |format|
       format.html # index.html.erb

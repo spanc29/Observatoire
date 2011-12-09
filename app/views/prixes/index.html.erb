@@ -24,7 +24,7 @@ compris entre <b><%= number_to_currency(Prix.minimum(:montant))%></b> et <b><%= 
     <th></th>
     <th></th>
   </tr>
-<% @prixes.each do |prix| %>
+<% @prixes.limit(10).each do |prix| %>
   <tr>
     <td><span class="quiet"> <%= l(prix.updated_at.to_date) %></span></td>
     <td><%= prix.departement %></td>
