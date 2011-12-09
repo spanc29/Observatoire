@@ -3,4 +3,5 @@ class Liste < ActiveRecord::Base
 
   scope :depart, where(:quoi => 'depart')
   scope :filiere, where(:quoi => 'filiere')
+  scope :rejet, where(:quoi => 'rejet')
 end

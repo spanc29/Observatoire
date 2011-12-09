@@ -1,6 +1,7 @@
 <%= simple_form_for @prix do |f| %>
   <p><%= f.input :departement, :label => "Département", :as => :select, :collection => Liste.where(:quoi =>"depart"), :label_method => 'content', :value_method => 'content' %></p>
   <p><%= f.input :type_filiere, :label => "Type de filière", :as => :select, :collection => Liste.filiere, :label_method => 'content', :value_method => 'content' %></p>
+  <p><%= f.input :dispersion, :label => "Si drainée - dispersion", :as => :select, :collection => Liste.rejet, :label_method => 'content', :value_method => 'content' %></p>
 
   <p><%= f.input :dimension, :label => "Dimension (eq.hab ou PP)", :collection => 3..200 %></p>
   <p><%= f.input :date, :id => "datepicker", :as => :string, :label => "Date de réalisation" %></p>
