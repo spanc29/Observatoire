@@ -11,7 +11,7 @@ class PrixReport
   #
   # Filters
   #
-  filter(:departement, :enum, :select => Liste.depart.map { |d| [d.content]}, :header => "département")
+  filter(:departement, :enum, :select => Prix.depart_saisie.map { |d| [d.departement]}.uniq, :header => "département")
   filter(:type_filiere, :enum, :select => Liste.filiere.map { |f| [f.content]}, :header => "type de filière")
   filter(:dispersion, :enum, :select => Liste.rejet.map { |f| [f.content]}, :header => "dispersion")
   filter(:difficulte, :enum, :select => ['Facile','Moyen','Difficile','Très difficile'], :header => "Difficulté")

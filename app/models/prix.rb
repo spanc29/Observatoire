@@ -5,4 +5,5 @@ class Prix < ActiveRecord::Base
 
 
   scope :diffic, where("difficulte IS NOT NULL")
+  scope :depart_saisie, where("departement IS NOT NULL")
 end
