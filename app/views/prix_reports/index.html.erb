@@ -3,7 +3,7 @@
       <span class="title_panel center">filtrer</span>
       <%= form_for @prix_report, :html => {:method => :get} do |f| -%>
         <% @prix_report.filters.each do |filter| -%>
-        <div class="statform"><%= f.datagrid_label filter %><%= f.datagrid_filter filter %></div>
+        <%= f.datagrid_label filter %><%= f.datagrid_filter filter %><br/>
       <%end%>
     <%= f.submit 'Créer filtre' %>
     <%end%>

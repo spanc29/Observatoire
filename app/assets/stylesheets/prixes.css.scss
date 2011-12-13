@@ -1,8 +1,32 @@
 // Place all the styles related to the prixes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
-.simple_form {
+.new_prix_report {
+  label{
+      width: 29%;
+      height: 22px;
+      float: left;
+      padding-right: 1%;
+      text-align: right;
+      font-size: 1.2em;
+      padding-top:1px;
+      letter-spacing: 1px;}
+      .collection_radio {
+     float:none;
+    background-color: #FFFFFF}
+  input, select, textarea {
+      width: 60%;
+      margin-left: 1%;
+      border: #CCC 1px solid;
+      background-color: #E5E5E5;
+      &:hover{
+        border: #999 1px solid;
+        background-color: #DDEEFF}
+      }
+  input[type=submit]{
+      width: 25%; }
+}
+.simple_form, {
   label{
       background-color: #7DA5E0;
       width: 29%;
@@ -66,16 +90,4 @@
   width: 100%;
   text-align: center;
 
-}
-.statform {
-    margin: 5px 10px 0 10px;
-    float: left;
-}
-
-#panel {
-  display: block;
-}
-
-#graph {
-  clear: both;
 }
