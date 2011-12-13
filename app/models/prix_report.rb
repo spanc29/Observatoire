@@ -2,12 +2,14 @@
 
 class PrixReport
   include Datagrid
+
   #
   # Scope
   #
   scope do
     Prix
   end
+
   #
   # Filters
   #

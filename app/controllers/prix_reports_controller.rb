@@ -3,13 +3,14 @@
 class PrixReportsController < ApplicationController
 
   def index
+
     @prix_report = PrixReport.new(params[:prix_report])
     @assets = @prix_report.assets.page(params[:page])
 
   # make an array for visibility by javascript
     @reha = Array.new
     @neuf = Array.new
-    @assets.each do |m|
+    @prix_report.assets.each do |m|
       if m.neuf == "Réhabilitation"
       @reha.push([m.dimension,m.montant])
       else
