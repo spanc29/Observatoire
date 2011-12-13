@@ -94,6 +94,7 @@ img {border: none;}
 }
 
 .table_top2{
+display: block;
 padding-right: 30px;
 margin-bottom: 10px;
 background-color:#ffffff;

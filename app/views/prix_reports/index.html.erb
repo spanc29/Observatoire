@@ -1,23 +1,24 @@
 <div id="panel">
-        <div class="table_top2">
-          <div align="center"><span class="title_panel">filtrer</span> </div>
-<%= form_for @prix_report, :html => {:method => :get} do |f| -%>
-  <% @prix_report.filters.each do |filter| -%>
+  <div class="table_top2">
+      <span class="title_panel center">filtrer</span>
+      <%= form_for @prix_report, :html => {:method => :get} do |f| -%>
+        <% @prix_report.filters.each do |filter| -%>
         <div class="statform"><%= f.datagrid_label filter %><%= f.datagrid_filter filter %></div>
-  <%end%>
-  <%= f.submit 'Créer filtre' %>
-  <%end%>
-</div>
+      <%end%>
+    <%= f.submit 'Créer filtre' %>
+    <%end%>
+  </div>
 </div>
 
 <% if @prix_report.assets.any? %>
 
 <div id="graph">
-<%= high_chart("my_id", @h) do |c|%>
-<% "options.tooltip.formatter = function() {return ''+ this.series.name +' : '+ this.y +' € ';}" %>
-<%end%>
+  <%= high_chart("my_id", @h) do |c|%>
+    <% "options.tooltip.formatter = function() {return ''+ this.series.name +' : '+ this.y +' € ';}" %>
+  <%end%>
+</div>
 
-  <div class='total'>
+<div class='total'>
     <h3>STATISTIQUES GENERALES</h3>
     <span class="subtitle_gray"> Suivant filtre</span><br/>
   <table id="Tstat">
@@ -54,7 +55,7 @@
 
 <%= datagrid_table(@prix_report, @assets, :cycle => ["odd", "even"]) %>
 <%= paginate @assets %>
-</div>
+
 <% else %>
 <h1>Désolé, aucun résultat</h1>
 <%end%>
