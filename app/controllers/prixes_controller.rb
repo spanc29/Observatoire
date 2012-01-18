@@ -46,7 +46,7 @@ class PrixesController < ApplicationController
 
     respond_to do |format|
       if @prix.save
-        format.html { redirect_to @prix, notice: 'Entrée créé avec succès, merci de votre aide.' }
+        format.html { redirect_to @prix, notice: 'Entrée créée avec succès, merci de votre aide.' }
         format.json { render json: @prix, status: :created, location: @prix }
       else
         format.html { render action: "new" }

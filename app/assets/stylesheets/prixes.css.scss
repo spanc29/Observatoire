@@ -4,6 +4,7 @@
 .new_prix_report {
   label{
       width: 29%;
+      display: inline-block;
       height: 22px;
       float: left;
       padding-right: 1%;
@@ -16,11 +17,12 @@
     background-color: #FFFFFF}
   input, select, textarea {
       width: 60%;
+      display: inline-block;
       margin-left: 1%;
-      border: #CCC 1px solid;
-      background-color: #E5E5E5;
+      /*border: #CCC 1px solid;
+      background-color: #E5E5E5;*/
       &:hover{
-        border: #999 1px solid;
+        /*border: #999 1px solid;*/
         background-color: #DDEEFF}
       }
   input[type=submit]{
