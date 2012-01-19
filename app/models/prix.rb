@@ -5,5 +5,5 @@ class Prix < ActiveRecord::Base
 
 
   scope :diffic, where("difficulte IS NOT NULL")
-  scope :depart_saisie, where("departement IS NOT NULL").order("departement DESC")
+  scope :depart_saisie, where("departement IS NOT NULL").order("departement ASC")
 end

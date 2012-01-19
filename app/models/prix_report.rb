@@ -17,8 +17,8 @@ class PrixReport
   filter(:type_filiere, :enum, :select => Liste.filiere.map { |f| [f.content]}, :header => "type de filière")
   filter(:dispersion, :enum, :select => Liste.rejet.map { |f| [f.content]}, :header => "dispersion")
   filter(:difficulte, :enum, :select => ['Facile','Moyen','Difficile','Très difficile'], :header => "Difficulté")
-  filter(:neuf)
-  integer_range_filters(:dimension)
+  filter(:neuf, :eboolean)
+  integer_range_filters(:dimension, :header => "type de filière")
   date_range_filters(:date)
   #
   # Columns
